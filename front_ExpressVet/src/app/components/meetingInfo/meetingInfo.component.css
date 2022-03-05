@@ -1,0 +1,14 @@
+.name {
+  font-family: 'Righteous', cursive;
+  margin: 0rem 1rem 0rem 1rem;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.comments {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+}

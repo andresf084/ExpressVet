@@ -1,0 +1,72 @@
+<div [formGroup]="form" class="reserveCard">
+  <mat-card>
+    <mat-card-title>RESERVA DE CITAS</mat-card-title>
+    <mat-card-subtitle>En este espacio podrás reservar tu cita con nosotros para atender a tu amigo peludo</mat-card-subtitle>
+    <mat-card-content>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{config.config.manageMeetingsComponent.colstartDateTime}}</mat-label>
+          <input matInput type="datetime-local" formControlName="startDateTime">
+          <mat-error *ngIf="petName.hasError('required')">Por favor ingresa el nombre de tu mascota</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{config.config.manageMeetingsComponent.colpetName}}</mat-label>
+          <input matInput placeholder="Nombre de la mascota" formControlName="petName">
+          <mat-error *ngIf="petName.hasError('required')">Por favor ingresa el nombre de tu mascota</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>{{config.config.manageMeetingsComponent.colpetKind}}</mat-label>
+          <mat-select formControlName="petKind" required>
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let animal of animals" [value]="animal">
+              {{animal | titlecase}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="petKind.hasError('required')">Por favor selecciona un tipo de mascota</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{config.config.manageMeetingsComponent.colpetOwner}}</mat-label>
+          <input matInput placeholder="Responsable de la mascota" formControlName="petOwner">
+          <mat-error *ngIf="petOwner.hasError('required')">Por favor ingresa el nombre del responsable de la mascota</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{config.config.manageMeetingsComponent.colcaseDescription}}</mat-label>
+          <input matInput placeholder="Sintomas de la mascota" formControlName="caseDescription">
+          <mat-error *ngIf="caseDescription.hasError('required')">Por favor cuentanos brevemente que le sucede a tu mascota</mat-error>
+        </mat-form-field>
+      </div>
+
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-button>RESERVAR CITA</button>
+      <button mat-button>CANCELAR</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="cardCancel">
+  <mat-card>
+    <mat-card-title>Cancelación de citas</mat-card-title>
+    <mat-card-subtitle>Que lastima que no puedas asistir a tu cita, pero te esperamos para la próxima!</mat-card-subtitle>
+    <mat-card-content>
+      <p>Ingresa en la siguiente casilla el código único de cita que te fue proporcionado cuando la reservaste</p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Código de la cita</mat-label>
+        <input type="text" matInput>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary">BUSCAR CITA</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+

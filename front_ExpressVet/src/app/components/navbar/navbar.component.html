@@ -1,0 +1,18 @@
+<p>
+  <mat-toolbar color="primary">
+  <span>Express Vet</span>
+  <span class="example-spacer"></span>
+  <span matBadge={{qtyMeetingsReserve}} matBadgeOverlap="true" matBadgeColor="warn" matBadgePosition="after" class="badge">Citas reservadas</span>
+  <span matBadge={{qtyMeetingsActive}} matBadgeOverlap="true" matBadgeColor="warn" matBadgePosition="after" class="badge">Citas activas</span>
+  <span matBadge={{qtyMeetingsComplete}} matBadgeOverlap="true" matBadgeColor="warn" matBadgePosition="after" class="badge">Citas completadas</span>
+  <span>
+    <button mat-button [matMenuTriggerFor]="beforeMenu" class="name">
+      Bienvenido {{userRol | titlecase}} {{userName | titlecase}}
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button mat-menu-item (click)="logOut()">Cerrar sesión</button>
+    </mat-menu>
+  </span>
+
+</mat-toolbar>
+</p>

@@ -1,0 +1,38 @@
+.demo-inline-calendar-card {
+  width: 300px;
+}
+
+.cardCancel {
+  position: absolute;
+  top: 30%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}
+
+mat-card-title {
+  padding: 10px;
+  text-align: center;
+}
+
+mat-card-subtitle {
+  padding: 10px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card-actions {
+  text-align: center;
+}
+
+.reserveCard {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  box-shadow: 5px 5px 5px 5px lightgrey;
+}

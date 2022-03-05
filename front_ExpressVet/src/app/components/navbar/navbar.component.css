@@ -1,0 +1,12 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.badge {
+  margin: 0px 20px 0px 20px;
+}
+
+.name {
+  margin: 0px 20px 0px 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div id="title">
+  <h1>GESTION DE RESERVAS</h1>
+</div>
+<div id="meetingsTable">
+  <table id="meetings">
+      <thead>
+          <tr>
+              <th scope="col">{{config.config.manageMeetingsComponent.colIdMeeting}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colcreated_at}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colstartDateTime}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colendDateTime}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colpetName}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colpetKind}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colpetOwner}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colcaseDescription}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colveterinaryName}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colstatusName}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.colstatusComment}}</th>
+              <th scope="col">{{config.config.manageMeetingsComponent.btnActivate}}</th>
+          </tr>
+      </thead>
+      <tbody *ngIf="meetingsMaster.length > 0">
+          <tr *ngFor="let item of meetingsMaster">
+              <td scope="row">{{item.IdMeeting}}</td>
+              <td>{{item.created_at | date: 'medium'}}</td>
+              <td>{{item.startDateTime | date: 'medium'}}</td>
+              <td>{{item.endDateTime | date: 'medium'}}</td>
+              <td>{{item.petName | titlecase}}</td>
+              <td>{{item.petKind | titlecase}}</td>
+              <td>{{item.petOwner | titlecase}}</td>
+              <td>{{item.caseDescription}}</td>
+              <td>{{item.veterinaryName | titlecase}}</td>
+              <td>{{item.statusName | titlecase}}</td>
+              <td>{{item.statusComment}}</td>
+              <td><button mat-icon-button color="accent" (click)="viewMeetingInfo(item)"><mat-icon>publish</mat-icon></button></td>
+          </tr>
+      </tbody>
+  </table>
+</div>
