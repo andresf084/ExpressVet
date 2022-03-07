@@ -51,4 +51,12 @@ export class MeetingsService {
     return this.http.post(this.URL_API+'/meeting/search', data)
   }
 
+  searchReserves(data:any){
+    return this.http.post(this.URL_API+'/meeting/searchRsrvs', data)
+  }
+
+  cancelMeetings(data:any){
+    return this.http.put(this.URL_API+'/meeting/cancel', data)
+  }
+
 }

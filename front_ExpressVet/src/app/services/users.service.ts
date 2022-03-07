@@ -15,27 +15,27 @@ export class UsersService {
   ) { }
 
   createUsers(data:any){
-    return this.http.post(this.URL_API+'/userMaster', data)
+    return this.http.post(this.URL_API+'/user', data)
   }
 
   updateUsers(data:any){
-    return this.http.put(this.URL_API+'/userMaster', data)
+    return this.http.put(this.URL_API+'/user', data)
   }
 
   deleteUsers(id:string){
-    return this.http.delete(this.URL_API+'/userMaster/' + id)
+    return this.http.delete(this.URL_API+'/user/' + id)
   }
 
   listUsers(){
-    return this.http.get(this.URL_API+'/userMaster')
+    return this.http.get(this.URL_API+'/user')
   }
 
   activeUsers(data:any){
-    return this.http.put(this.URL_API+'/userMaster/active', data)
+    return this.http.put(this.URL_API+'/user/active', data)
   }
 
   searchUsers(data:any){
-    return this.http.post(this.URL_API+'/userMaster/search', data)
+    return this.http.post(this.URL_API+'/user/search', data)
   }
 
 }

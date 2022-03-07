@@ -11,5 +11,7 @@ router.post('/search', buildSearch, meetingMaster.search)
 router.get('/cntActv', meetingMaster.CountActive)
 router.get('/cntRsrv', meetingMaster.CountReserve)
 router.get('/cntCmplt', meetingMaster.CountComplete)
+router.post('/searchRsrvs', meetingMaster.SearchReserve)
+router.put('/cancel', meetingMaster.Cancel)
 
 module.exports = router

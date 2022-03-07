@@ -5,8 +5,8 @@ var meetingsMasterSchema = new mongoose.Schema
 ({
     IdMeeting: {type: String, default: uuidv4()},
     created_at: {type: Date, default: Date.now()},
-    startDateTime: {type: Number, required: true},
-    endDateTime: {type: Number, required: true},
+    startDateTime: {type: Date, required: true},
+    endDateTime: {type: Date},
     petName: {type: String, lowercase: true, required: true},
     petKind: {type: String, lowercase: true, required: true},
     petOwner: {type: String, lowercase: true, required: true},
